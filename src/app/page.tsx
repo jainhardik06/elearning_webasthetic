@@ -1,65 +1,546 @@
 import Image from "next/image";
 
+const navLinks = [
+  "Home",
+  "Courses",
+  "Blog",
+  "About",
+  "Pricing",
+];
+
+const filters = [
+  "All Programs",
+  "UI/UX Design",
+  "Product Design",
+  "Program Design",
+  "Product Design",
+  "Program Design",
+  "Product Design",
+];
+
+const popularCourses = [
+  {
+    title: "Product Management Basic Course",
+    students: "80+ students",
+    price: 380,
+    oldPrice: 500,
+    badge: "Business",
+    color: "bg-[#f6f9ff]",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Data Science Professional Certificate",
+    students: "678 students",
+    price: 670,
+    oldPrice: 980,
+    badge: "Data",
+    color: "bg-[#fdf4e7]",
+    image:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "The Science of Well-Being",
+    students: "1230 students",
+    price: 123,
+    oldPrice: 190,
+    badge: "Mind",
+    color: "bg-[#e8f6f5]",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Python for Everybody Specialization",
+    students: "987 students",
+    price: 567,
+    oldPrice: 800,
+    badge: "Code",
+    color: "bg-[#f1f5ff]",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+  },
+];
+
+const categories = [
+  { name: "Beauty", copy: "Online suites that combine core tools.", icon: "💅" },
+  { name: "Medical", copy: "Clinical and administrative foundations.", icon: "🩺" },
+  { name: "Sports", copy: "Coaching, analytics, and fitness programs.", icon: "🏃" },
+  { name: "Nutrition", copy: "Healthy habits with expert guidance.", icon: "🥗" },
+];
+
+const perks = [
+  "TAs and presenters can be moved to the front of the class.",
+  "Teachers can easily see all students and class data at one time.",
+  "Dedicated podium space keeps lectures focused.",
+];
+
+const bundles = [
+  {
+    title: "Product Management Basic - Course",
+    date: "12-30 July 2025",
+    price: 380,
+    oldPrice: 500,
+    students: "40 students",
+    image:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=80",
+  },
+  {
+    title: "UI Motion Design Pro Path",
+    date: "Aug 2025",
+    price: 420,
+    oldPrice: 560,
+    students: "32 students",
+    image:
+      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=640&q=80",
+  },
+];
+
+const FeatureDot = ({ color }: { color: string }) => (
+  <span
+    aria-hidden
+    className="inline-flex h-2.5 w-2.5 rounded-full"
+    style={{ backgroundColor: color }}
+  />
+);
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-[#f6fbf9] text-[#0f2f2f]">
+      <section className="relative overflow-hidden">
+        <div className="hero-blob" />
+        <div className="max-w-6xl mx-auto px-4 pb-12 pt-6 relative z-10">
+          <header className="flex items-center justify-between rounded-full bg-white/80 px-4 py-3 soft-border float-badge">
+            <div className="flex items-center gap-2 font-semibold">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1aa6a0] text-white font-bold">
+                O
+              </span>
+              <span className="text-lg">onlearn</span>
+            </div>
+            <nav className="hidden md:flex items-center gap-6 text-sm text-[#567070]">
+              {navLinks.map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="hover:text-[#1aa6a0] transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
+            </nav>
+            <div className="flex items-center gap-3">
+              <button className="rounded-full px-4 py-2 text-sm font-semibold text-[#0f2f2f] soft-border bg-white hover:bg-[#f1f5f4] transition">
+                Log in
+              </button>
+              <button className="rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#1aa6a0] hover:bg-[#158b86] transition cta-pill">
+                Sign up
+              </button>
+            </div>
+          </header>
+
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center mt-10 rounded-3xl bg-white px-6 sm:px-10 py-10 soft-border card-shadow relative overflow-hidden">
+            <div className="absolute inset-0 dotted-bg opacity-60" aria-hidden />
+            <div className="relative z-10 space-y-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#e8f6f5] px-4 py-2 text-xs font-semibold text-[#0f7e7b]">
+                <span className="h-2 w-2 rounded-full bg-[#f15b2a]" /> Never stop learning
+              </span>
+              <h1 className="section-title text-4xl sm:text-5xl leading-[1.1] text-[#0f2f2f] max-w-2xl">
+                Grow up your skills by online courses with Onlearning
+              </h1>
+              <p className="text-lg text-[#567070] max-w-2xl">
+                Live, expert-led classes designed to fit your schedule. Build a portfolio, gain certifications, and unlock new opportunities.
+              </p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <button className="rounded-full bg-[#f15b2a] text-white px-5 py-3 text-sm font-semibold cta-pill">
+                  Explore path
+                </button>
+                <button className="inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold text-[#1aa6a0] soft-border bg-white hover:bg-[#f1f5f4] transition">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#e8f6f5] text-[#1aa6a0]">▶</span>
+                  Watch intro
+                </button>
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-3">
+                    {[1, 2, 3].map((item) => (
+                      <span
+                        key={item}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#d7efe9] text-xs font-semibold text-[#0f2f2f]"
+                      >
+                        {50 + item}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-sm text-[#567070]">
+                    <div className="font-semibold text-[#0f2f2f]">4.8/5</div>
+                    <div>120k+ reviews</div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="float-badge rounded-2xl bg-white px-4 py-3 soft-border flex items-center gap-3">
+                  <span className="h-10 w-10 rounded-xl bg-[#e8f6f5] text-[#1aa6a0] inline-flex items-center justify-center font-bold">
+                    🎓
+                  </span>
+                  <div>
+                    <div className="text-sm text-[#567070]">Assisted Students</div>
+                    <div className="text-xl font-bold">250k</div>
+                  </div>
+                </div>
+                <div className="float-badge rounded-2xl bg-white px-4 py-3 soft-border flex items-center gap-3">
+                  <span className="h-10 w-10 rounded-xl bg-[#fff2ea] text-[#f15b2a] inline-flex items-center justify-center font-bold">
+                    ★
+                  </span>
+                  <div>
+                    <div className="text-sm text-[#567070]">Top Rated</div>
+                    <div className="text-xl font-bold">4.8 / 5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <div className="absolute -left-10 top-10 h-28 w-28 rounded-full bg-[#e8f6f5] blur-2xl" aria-hidden />
+              <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-[#ffe8dc] blur-2xl" aria-hidden />
+              <div className="relative rounded-[32px] overflow-hidden soft-border card-shadow bg-white">
+                <Image
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+                  alt="Student celebrating success"
+                  width={800}
+                  height={900}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 rounded-full bg-white soft-border card-shadow px-8 py-5 text-center w-48">
+                  <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#1aa6a0] text-white">
+                    ▶
+                  </div>
+                  <div className="text-xs uppercase tracking-[0.15em] text-[#567070]">Explore</div>
+                  <div className="text-sm font-semibold text-[#0f2f2f]">New Course Category</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </section>
+
+      <main className="max-w-6xl mx-auto px-4 space-y-20 pt-24 pb-24">
+        <section className="space-y-6">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f15b2a]">
+              Popular Courses
+            </p>
+            <div className="gradient-stroke" aria-hidden />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2 text-xs text-[#567070]">
+            {filters.map((item, index) => (
+              <button
+                key={item + index}
+                className={`rounded-full border px-3 py-2 transition ${
+                  index === 0
+                    ? "border-transparent bg-[#1aa6a0] text-white"
+                    : "soft-border bg-white hover:border-[#1aa6a0]/40"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {popularCourses.map((course) => (
+              <article
+                key={course.title}
+                className={`rounded-2xl overflow-hidden soft-border card-shadow bg-white flex flex-col`}
+              >
+                <div className={`${course.color} relative h-36 w-full overflow-hidden`}>
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    width={400}
+                    height={200}
+                    className="h-full w-full object-cover"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#1aa6a0] soft-border">
+                    {course.badge}
+                  </span>
+                </div>
+                <div className="p-4 space-y-3 flex-1 flex flex-col">
+                  <h3 className="text-sm font-semibold leading-5 text-[#0f2f2f]">
+                    {course.title}
+                  </h3>
+                  <div className="text-xs text-[#567070]">{course.students}</div>
+                  <div className="mt-auto flex items-center justify-between text-sm">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-lg font-bold text-[#f15b2a]">${course.price}</span>
+                      <span className="text-xs text-[#94a5a4] line-through">${course.oldPrice}</span>
+                    </div>
+                    <button className="text-xs font-semibold text-[#1aa6a0] hover:text-[#0f7e7b]">
+                      Enroll
+                    </button>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          <div className="text-center space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f15b2a]">Courses Category</p>
+            <h2 className="section-title text-3xl text-[#0f2f2f]">Choose your path</h2>
+            <p className="text-[#567070] max-w-3xl mx-auto">
+              Onlearning is one powerful online software suite that combines all the tools needed to run a successful school or office.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-4">
+            {categories.map((category) => (
+              <div
+                key={category.name}
+                className="angle-card rounded-2xl p-5 flex flex-col gap-3 text-center"
+              >
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl" aria-hidden>
+                  {category.icon}
+                </span>
+                <h3 className="font-bold text-lg text-[#0f2f2f]">{category.name}</h3>
+                <p className="text-sm text-[#567070] leading-relaxed">{category.copy}</p>
+                <button className="mt-auto rounded-full border px-4 py-2 text-xs font-semibold text-[#1aa6a0] border-[#1aa6a0]/20 hover:bg-[#e8f6f5] transition">
+                  Explore courses
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-10 lg:grid-cols-[1fr_1.05fr] items-center">
+          <div className="space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1aa6a0]">Benefits</span>
+            <h2 className="section-title text-3xl text-[#0f2f2f]">Get Student ID card</h2>
+            <p className="text-[#567070] max-w-xl">
+              Teachers don’t get lost in the grid view and have a dedicated podium space. Stay in control of every session with crystal clear visibility.
+            </p>
+            <div className="space-y-3">
+              {perks.map((perk) => (
+                <div key={perk} className="flex items-start gap-3 text-sm text-[#567070]">
+                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#e8f6f5] text-[#1aa6a0] font-semibold">
+                    ✓
+                  </span>
+                  <span>{perk}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-3xl bg-white soft-border card-shadow p-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-[#e8f6f5] text-[#1aa6a0] inline-flex items-center justify-center font-bold">
+                  🪪
+                </div>
+                <div>
+                  <div className="text-sm text-[#567070]">ID Number</div>
+                  <div className="font-semibold">2025 8299 1001</div>
+                </div>
+              </div>
+              <div className="rounded-2xl bg-[#f6fbf9] p-4 soft-border">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs text-[#567070]">Full name</div>
+                    <div className="font-semibold text-[#0f2f2f]">Mark J. William</div>
+                  </div>
+                  <div className="text-xs text-[#1aa6a0] font-semibold">Active</div>
+                </div>
+                <div className="mt-4 flex items-center gap-3">
+                  <Image
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=200&q=80"
+                    alt="Student portrait"
+                    width={64}
+                    height={64}
+                    className="h-16 w-16 rounded-full object-cover"
+                  />
+                  <div className="text-xs text-[#567070]">
+                    <div>Level: Gold</div>
+                    <div>Valid: 07/2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl bg-white soft-border card-shadow p-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-[#fff2ea] text-[#f15b2a] inline-flex items-center justify-center font-bold">
+                  📌
+                </div>
+                <div>
+                  <div className="text-sm text-[#567070]">Secure Access</div>
+                  <div className="font-semibold">Scan to verify</div>
+                </div>
+              </div>
+              <div className="rounded-2xl bg-[#fef6f2] p-4 soft-border text-center space-y-2">
+                <div className="mx-auto h-16 w-16 rounded-xl bg-white grid place-items-center text-2xl">🔲</div>
+                <div className="text-xs text-[#567070]">QR validation for every class join.</div>
+              </div>
+              <button className="w-full rounded-full bg-[#1aa6a0] text-white py-3 text-sm font-semibold hover:bg-[#0f7e7b] transition cta-pill">
+                Download ID
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-10 lg:grid-cols-[1.05fr_1fr] items-center">
+          <div className="space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1aa6a0]">Training</span>
+            <h2 className="section-title text-3xl text-[#0f2f2f]">Staff training</h2>
+            <p className="text-[#567070] max-w-xl">
+              Run engaging workshops with podium control, presenter lanes, and focus spaces. Keep every participant on track.
+            </p>
+            <div className="space-y-2 text-sm text-[#567070]">
+              {perks.map((perk, idx) => (
+                <div key={perk + idx} className="flex items-center gap-3">
+                  <FeatureDot color={idx % 2 === 0 ? "#1aa6a0" : "#f15b2a"} />
+                  <span>{perk}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-10 -top-6 h-24 w-24 rounded-full bg-[#e8f6f5] blur-3xl" aria-hidden />
+            <div className="absolute -right-12 bottom-0 h-32 w-32 rounded-full bg-[#ffe8dc] blur-3xl" aria-hidden />
+            <div className="relative rounded-3xl bg-white soft-border card-shadow p-6">
+              <Image
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80"
+                alt="Team training session"
+                width={900}
+                height={600}
+                className="w-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="rounded-[28px] bg-[#e3222a] text-white card-shadow overflow-hidden">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] items-center">
+            <div className="space-y-4 p-8 sm:p-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em]">Why you should buy gift cards?</p>
+              <h2 className="section-title text-3xl">Unlock joyful learning for someone special.</h2>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2"><span className="mt-1 text-lg">•</span><span>Teachers don’t get lost in the grid view and have a dedicated podium space.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1 text-lg">•</span><span>TAs and presenters can be moved to the front of the class.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1 text-lg">•</span><span>Teachers can easily see all students and class data at one time.</span></li>
+              </ul>
+              <button className="rounded-full bg-white text-[#e3222a] px-5 py-3 text-sm font-semibold w-max hover:bg-[#ffe8e8] transition">
+                Buy now
+              </button>
+            </div>
+            <div className="relative min-h-[280px]">
+              <Image
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+                alt="Happy student with gift card"
+                width={800}
+                height={700}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-8">
+          <div className="text-center space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f15b2a]">Exclusive Bundles</p>
+            <h2 className="section-title text-3xl text-[#0f2f2f]">Specialized bundles to accelerate you</h2>
+            <p className="text-[#567070] max-w-3xl mx-auto">
+              Combine live classes, office hours, and projects. Pay once, get everything.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {bundles.map((bundle) => (
+              <article
+                key={bundle.title}
+                className="rounded-3xl bg-white soft-border card-shadow overflow-hidden flex flex-col md:flex-row"
+              >
+                <div className="md:w-1/3 h-full">
+                  <Image
+                    src={bundle.image}
+                    alt={bundle.title}
+                    width={360}
+                    height={240}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="p-6 space-y-3 flex-1">
+                  <div className="text-xs text-[#567070]">{bundle.date}</div>
+                  <h3 className="text-lg font-semibold text-[#0f2f2f]">{bundle.title}</h3>
+                  <div className="flex items-center gap-2 text-xs text-[#567070]">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f6f5] px-3 py-1 text-[#1aa6a0] font-semibold">
+                      🐍
+                      <span>Python</span>
+                    </span>
+                    <span>{bundle.students}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="text-lg font-bold text-[#f15b2a]">${bundle.price}</span>
+                    <span className="text-xs text-[#94a5a4] line-through">${bundle.oldPrice}</span>
+                  </div>
+                  <button className="rounded-full bg-[#1aa6a0] text-white px-4 py-2 text-sm font-semibold w-max hover:bg-[#0f7e7b] transition cta-pill">
+                    Buy now
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
+
+      <footer className="bg-white border-t border-[#d8e7e4]">
+        <div className="max-w-6xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-[1.1fr_1fr_1fr_1.2fr] text-sm text-[#567070]">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 font-semibold text-[#0f2f2f]">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1aa6a0] text-white font-bold">
+                O
+              </span>
+              <span>onlearn</span>
+            </div>
+            <p>
+              Learn growth driven, smart, consistent, delightful journeys.
+            </p>
+            <div className="space-y-1">
+              <div>Tel: +62-361-304-0007</div>
+              <div>Mon–Fri 08:00-17:00</div>
+              <div>Email: info@onlearn.com</div>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold text-[#0f2f2f] mb-3">Categories</h4>
+            <ul className="space-y-2">
+              <li>Counseling</li>
+              <li>Academic</li>
+              <li>Individual development</li>
+              <li>More</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-[#0f2f2f] mb-3">Links</h4>
+            <ul className="space-y-2">
+              <li>About Us</li>
+              <li>Blog</li>
+              <li>Support</li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <h4 className="font-semibold text-[#0f2f2f]">Stay up to date</h4>
+            <p>Join 100k+ students getting curated course drops.</p>
+            <div className="flex items-center gap-2 rounded-full soft-border bg-[#f6fbf9] p-1">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="flex-1 bg-transparent px-3 py-2 text-sm outline-none"
+              />
+              <button className="rounded-full bg-[#1aa6a0] text-white px-4 py-2 text-sm font-semibold hover:bg-[#0f7e7b] transition cta-pill">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

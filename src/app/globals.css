@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6fbf9;
+  --surface: #ffffff;
+  --ink: #0f2f2f;
+  --muted: #567070;
+  --accent: #1aa6a0;
+  --accent-2: #f15b2a;
+  --accent-soft: #b8ece4;
+  --outline: #d8e7e4;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-foreground: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-outline: var(--outline);
+  --font-sans: var(--font-onlearn-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-onlearn-display), "Georgia", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  font-family: var(--font-onlearn-sans), system-ui, -apple-system, sans-serif;
+}
+
+.bg-surface {
+  background-color: var(--background);
+}
+
+.card-shadow {
+  box-shadow: 0 12px 36px rgba(16, 91, 91, 0.08);
+}
+
+.soft-border {
+  border: 1px solid var(--outline);
+}
+
+.hero-blob {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 60% at 20% 20%, rgba(26, 166, 160, 0.18), transparent),
+    radial-gradient(50% 50% at 80% 10%, rgba(241, 91, 42, 0.14), transparent),
+    radial-gradient(50% 70% at 60% 80%, rgba(0, 194, 163, 0.12), transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dotted-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 47, 47, 0.08) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.cta-pill {
+  box-shadow: 0 10px 25px rgba(241, 91, 42, 0.35);
+}
+
+.section-title {
+  font-family: var(--font-onlearn-display), "Georgia", serif;
+  letter-spacing: -0.02em;
+}
+
+.gradient-stroke {
+  background: linear-gradient(90deg, rgba(26, 166, 160, 0.35), rgba(241, 91, 42, 0.35));
+  height: 2px;
+  width: 120px;
+}
+
+.float-badge {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.angle-card {
+  background: linear-gradient(135deg, rgba(26, 166, 160, 0.12), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(26, 166, 160, 0.12);
+  box-shadow: 0 16px 40px rgba(10, 45, 40, 0.08);
 }
