@@ -1,12 +1,5 @@
 import Image from "next/image";
-
-const navLinks = [
-  "Home",
-  "Courses",
-  "Blog",
-  "About",
-  "Pricing",
-];
+import Navbar from "../components/Navbar";
 
 const filters = [
   "All Programs",
@@ -105,115 +98,64 @@ const FeatureDot = ({ color }: { color: string }) => (
 
 export default function Home() {
   return (
-    <div className="bg-[#f6fbf9] text-[#0f2f2f]">
-      <section className="relative overflow-hidden">
-        <div className="hero-blob" />
-        <div className="max-w-6xl mx-auto px-4 pb-12 pt-6 relative z-10">
-          <header className="flex items-center justify-between rounded-full bg-white/80 px-4 py-3 soft-border float-badge">
-            <div className="flex items-center gap-2 font-semibold">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1aa6a0] text-white font-bold">
-                O
-              </span>
-              <span className="text-lg">onlearn</span>
-            </div>
-            <nav className="hidden md:flex items-center gap-6 text-sm text-[#567070]">
-              {navLinks.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="hover:text-[#1aa6a0] transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-            <div className="flex items-center gap-3">
-              <button className="rounded-full px-4 py-2 text-sm font-semibold text-[#0f2f2f] soft-border bg-white hover:bg-[#f1f5f4] transition">
-                Log in
-              </button>
-              <button className="rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#1aa6a0] hover:bg-[#158b86] transition cta-pill">
-                Sign up
-              </button>
-            </div>
-          </header>
+    <div className="bg-white text-[#0B7077]">
+      <section className="hero-wrapper">
+        <div className="hero-section">
+          <div className="hero-texture" aria-hidden />
+          
+          <div className="max-w-7xl mx-auto px-8 pt-6 pb-0 relative z-10">
+            <Navbar active="Home" />
 
-          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center mt-10 rounded-3xl bg-white px-6 sm:px-10 py-10 soft-border card-shadow relative overflow-hidden">
-            <div className="absolute inset-0 dotted-bg opacity-60" aria-hidden />
-            <div className="relative z-10 space-y-6">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#e8f6f5] px-4 py-2 text-xs font-semibold text-[#0f7e7b]">
-                <span className="h-2 w-2 rounded-full bg-[#f15b2a]" /> Never stop learning
-              </span>
-              <h1 className="section-title text-4xl sm:text-5xl leading-[1.1] text-[#0f2f2f] max-w-2xl">
-                Grow up your skills by online courses with Onlearning
-              </h1>
-              <p className="text-lg text-[#567070] max-w-2xl">
-                Live, expert-led classes designed to fit your schedule. Build a portfolio, gain certifications, and unlock new opportunities.
-              </p>
-              <div className="flex flex-wrap gap-4 items-center">
-                <button className="rounded-full bg-[#f15b2a] text-white px-5 py-3 text-sm font-semibold cta-pill">
-                  Explore path
-                </button>
-                <button className="inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold text-[#1aa6a0] soft-border bg-white hover:bg-[#f1f5f4] transition">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#e8f6f5] text-[#1aa6a0]">▶</span>
-                  Watch intro
-                </button>
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3].map((item) => (
-                      <span
-                        key={item}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#d7efe9] text-xs font-semibold text-[#0f2f2f]"
-                      >
-                        {50 + item}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="text-sm text-[#567070]">
-                    <div className="font-semibold text-[#0f2f2f]">4.8/5</div>
-                    <div>120k+ reviews</div>
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mt-12 mb-0">
+              <div className="space-y-6 pt-12">
+                <div className="inline-block bg-white/90 backdrop-blur-sm rounded-xl px-5 py-2.5 text-sm text-gray-600 shadow-sm">
+                  Never stop learning
+                </div>
+                
+                <h1 className="text-[3.2rem] lg:text-[3.75rem] font-bold leading-[1.15] text-[#0b7b6e]">
+                  Grow up your skills by online courses with Onlearning
+                </h1>
+
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button className="bg-[#ff5722] hover:bg-[#f4511e] text-white font-bold px-7 py-3 rounded-lg uppercase text-sm tracking-wide transition shadow-md">
+                    Explore path
+                  </button>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-2">
+                      <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=100&h=100&fit=crop" alt="" className="w-11 h-11 rounded-full border-2 border-white object-cover" />
+                      <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=100&h=100&fit=crop" alt="" className="w-11 h-11 rounded-full border-2 border-white object-cover" />
+                      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop" alt="" className="w-11 h-11 rounded-full border-2 border-white object-cover" />
+                    </div>
+                    <div>
+                      <div className="flex text-black text-base leading-none mb-0.5">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>½</span>
+                      </div>
+                      <div className="text-xs text-gray-600 font-medium">10k+ Reviews</div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="float-badge rounded-2xl bg-white px-4 py-3 soft-border flex items-center gap-3">
-                  <span className="h-10 w-10 rounded-xl bg-[#e8f6f5] text-[#1aa6a0] inline-flex items-center justify-center font-bold">
-                    🎓
-                  </span>
-                  <div>
-                    <div className="text-sm text-[#567070]">Assisted Students</div>
-                    <div className="text-xl font-bold">250k</div>
-                  </div>
-                </div>
-                <div className="float-badge rounded-2xl bg-white px-4 py-3 soft-border flex items-center gap-3">
-                  <span className="h-10 w-10 rounded-xl bg-[#fff2ea] text-[#f15b2a] inline-flex items-center justify-center font-bold">
-                    ★
-                  </span>
-                  <div>
-                    <div className="text-sm text-[#567070]">Top Rated</div>
-                    <div className="text-xl font-bold">4.8 / 5</div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div className="relative z-10">
-              <div className="absolute -left-10 top-10 h-28 w-28 rounded-full bg-[#e8f6f5] blur-2xl" aria-hidden />
-              <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-[#ffe8dc] blur-2xl" aria-hidden />
-              <div className="relative rounded-[32px] overflow-hidden soft-border card-shadow bg-white">
-                <Image
-                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
-                  alt="Student celebrating success"
-                  width={800}
-                  height={900}
-                  className="h-full w-full object-cover"
-                  priority
-                />
-                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 rounded-full bg-white soft-border card-shadow px-8 py-5 text-center w-48">
-                  <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#1aa6a0] text-white">
-                    ▶
+              <div className="relative lg:-mt-8 -mb-10">
+                <div className="relative h-[520px] flex items-end justify-center">
+                  <img 
+                    src="/homepage/person.png" 
+                    alt="Student" 
+                    className="h-full w-auto object-contain relative z-10"
+                  />
+                  
+                  <div className="absolute left-0 bottom-36 z-20">
+                    <img src="/homepage/heroimg.png" alt="250k Assisted Student" className="w-auto h-16" />
                   </div>
-                  <div className="text-xs uppercase tracking-[0.15em] text-[#567070]">Explore</div>
-                  <div className="text-sm font-semibold text-[#0f2f2f]">New Course Category</div>
+                  
+                  <div className="absolute right-6 top-20 z-20">
+                    <img src="/homepage/herocomp.png" alt="" className="w-auto h-24" />
+                  </div>
                 </div>
               </div>
             </div>

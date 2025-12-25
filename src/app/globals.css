@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6fbf9;
+  --background: #D2E6E4;
   --surface: #ffffff;
   --ink: #0f2f2f;
   --muted: #567070;
@@ -84,4 +84,27 @@ body {
   background: linear-gradient(135deg, rgba(26, 166, 160, 0.12), rgba(255, 255, 255, 0.9));
   border: 1px solid rgba(26, 166, 160, 0.12);
   box-shadow: 0 16px 40px rgba(10, 45, 40, 0.08);
+}
+
+.hero-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.hero-section {
+  background: linear-gradient(180deg, #c8e6de 0%, #d4ebe5 30%, #dff0eb 60%, #ebf5f2 100%);
+  position: relative;
+  padding-bottom: 0;
+  border-radius: 0 0 80px 80px;
+}
+
+.hero-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url("/homepage/texture.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  opacity: 0.25;
+  pointer-events: none;
 }
