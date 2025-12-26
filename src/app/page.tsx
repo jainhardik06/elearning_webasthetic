@@ -348,7 +348,7 @@ export default function Home() {
             <div className="absolute -right-12 bottom-0 h-32 w-32 rounded-full bg-[#ffe8dc] blur-3xl" aria-hidden />
             <div className="relative rounded-3xl bg-white soft-border card-shadow p-6">
               <Image
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                 alt="Team training session"
                 width={900}
                 height={600}

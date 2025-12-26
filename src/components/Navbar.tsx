@@ -36,12 +36,12 @@ export default function Navbar({ active = "Home" }: NavbarProps) {
       </nav>
       
       <div className="flex items-center gap-3">
-        <button className="text-sm font-semibold text-teal-700 px-6 py-2.5 rounded-full border border-gray-200 hover:bg-gray-50 transition uppercase tracking-wide">
+        <Link href="/login" className="text-sm font-semibold text-teal-700 px-6 py-2.5 rounded-full border border-gray-200 hover:bg-gray-50 transition uppercase tracking-wide">
           Log in
-        </button>
-        <button className="text-sm font-semibold text-white bg-teal-600 px-6 py-2.5 rounded-full hover:bg-teal-700 transition uppercase tracking-wide">
+        </Link>
+        <Link href="/signup" className="text-sm font-semibold text-white bg-teal-600 px-6 py-2.5 rounded-full hover:bg-teal-700 transition uppercase tracking-wide">
           Sign up
-        </button>
+        </Link>
       </div>
     </header>
   );

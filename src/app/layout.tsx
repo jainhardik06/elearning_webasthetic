@@ -23,8 +23,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -32,6 +34,7 @@ export default function RootLayout({
         className={`${manrope.variable} ${playfair.variable} antialiased bg-surface text-slate-900`}
       >
         {children}
+        {modal}
       </body>
     </html>
   );
