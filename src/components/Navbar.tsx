@@ -10,12 +10,9 @@ export default function Navbar({ active = "Home" }: NavbarProps) {
   return (
     <header className="flex items-center justify-between bg-white rounded-full px-6 py-3.5 shadow-sm">
       <div className="flex items-center gap-2.5">
-        <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center">
-          <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-          </svg>
+        <div className="w-14 h-14 flex items-center justify-center">
+          <img src="/homepage/logo.png" alt="NDSA Logo" className="w-full h-full object-contain" />
         </div>
-        <span className="text-xl font-bold text-teal-700">onlearn</span>
       </div>
       
       <nav className="hidden md:flex items-center gap-8">

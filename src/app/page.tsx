@@ -16,60 +16,60 @@ const filters = [
 // This will be populated by backend API
 const popularCourses = [
   {
-    title: "Product Management Basic - Learn to become a Product Manager",
-    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia",
+    title: "Educational & Vocational Coaching",
+    description: "Comprehensive coaching for school, college, and competitive exam aspirants to ensure academic success.",
     students: "1.2k",
     price: 380,
     oldPrice: 500,
-    badge: "Business",
+    badge: "Education",
     color: "bg-gradient-to-br from-pink-300 to-pink-100",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-    date: "1 - 28 July 2022"
+    date: "Enroll Now"
   },
   {
-    title: "Data Science Professional Certificate Program",
-    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia",
+    title: "Digital Skill Programs",
+    description: "Master industry-relevant tools and technologies to stay ahead in the digital world.",
     students: "2.5k",
     price: 670,
     oldPrice: 980,
-    badge: "Data",
+    badge: "Skills",
     color: "bg-gradient-to-br from-purple-300 to-purple-100",
     image:
       "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80",
-    date: "1 - 28 July 2022"
+    date: "Enroll Now"
   },
   {
-    title: "The Science of Well-Being and Happiness",
-    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia",
+    title: "Professional & Career Development",
+    description: "Specialized training for job seekers and working professionals to enhance employability.",
     students: "980",
     price: 123,
     oldPrice: 190,
-    badge: "Mind",
+    badge: "Career",
     color: "bg-gradient-to-br from-yellow-300 to-yellow-100",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-    date: "1 - 28 July 2022"
+    date: "Enroll Now"
   },
   {
-    title: "Python for Everybody Specialization Course",
-    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia",
+    title: "AI-based Learning Modules",
+    description: "Future-skill development aligned with global market demand using AI-driven training.",
     students: "3.2k",
     price: 567,
     oldPrice: 800,
-    badge: "Code",
+    badge: "AI",
     color: "bg-gradient-to-br from-blue-300 to-blue-100",
     image:
       "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
-    date: "1 - 28 July 2022"
+    date: "Enroll Now"
   },
 ];
 
 const categories = [
-  { name: "Beauty", copy: "One powerful online software suite that combines", image: "https://img.icons8.com/fluency/96/lipstick.png" },
-  { name: "Medical", copy: "One powerful online software suite that combines", image: "https://img.icons8.com/fluency/96/syringe.png" },
-  { name: "Sports", copy: "One powerful online software suite that combines", image: "https://img.icons8.com/fluency/96/dumbbell.png" },
-  { name: "Nutrition", copy: "One powerful online software suite that combines", image: "https://img.icons8.com/fluency/96/bread.png" },
+  { name: "School & College", copy: "For students from all educational backgrounds.", image: "https://img.icons8.com/fluency/96/student-male.png" },
+  { name: "Competitive Exams", copy: "Comprehensive coaching for aspirants.", image: "https://img.icons8.com/fluency/96/test-passed.png" },
+  { name: "Job Seekers", copy: "Professional training for career success.", image: "https://img.icons8.com/fluency/96/briefcase.png" },
+  { name: "Entrepreneurs", copy: "Personality development & entrepreneurship programs.", image: "https://img.icons8.com/fluency/96/idea.png" },
 ];
 
 const perks = [
@@ -141,16 +141,16 @@ export default function Home() {
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mt-12 mb-0">
               <div className="space-y-6 pt-12">
                 <div className="inline-block bg-white/90 backdrop-blur-sm rounded-xl px-5 py-2.5 text-sm text-gray-600 shadow-sm">
-                  Never stop learning
+                  National Digital Skill Academy
                 </div>
                 
                 <h1 className="text-[3.2rem] lg:text-[3.75rem] font-bold leading-[1.15] text-[#0b7b6e]">
-                  Grow up your skills by online courses with Onlearning
+                  Grow up your skills by online courses with NDSA
                 </h1>
 
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <button className="bg-[#ff5722] hover:bg-[#f4511e] text-white font-bold px-7 py-3 rounded-lg uppercase text-sm tracking-wide transition shadow-md">
-                    Explore path
+                    Explore Programs
                   </button>
                   
                   <div className="flex items-center gap-3">
@@ -199,7 +199,7 @@ export default function Home() {
         <section className="space-y-8">
           <div className="flex flex-col items-center gap-3 text-center">
             <h2 className="text-4xl font-bold text-[#ff5722]">
-              Popular Courses
+              Our Programs
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-[#17a2b8] to-[#17a2b8] rounded-full" aria-hidden />
           </div>
@@ -271,12 +271,12 @@ export default function Home() {
           <div className="text-center space-y-4">
             <div className="flex flex-col items-center gap-2">
               <h2 className="text-4xl font-bold text-[#0b7b6e]">
-                Courses Category
+                Who We Serve
               </h2>
               <div className="h-1 w-24 bg-[#ff5722] rounded-full" aria-hidden />
             </div>
             <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
-              Onlearing is one powerful online software suite that combines all the tools needed to run a successful school or office.
+              Our programs are structured to support students from all educational backgrounds, from beginners to advanced learners, ensuring inclusive and continuous learning.
             </p>
           </div>
 
@@ -311,7 +311,7 @@ export default function Home() {
 
         <section className="py-10 space-y-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0f2f2f]">
-            Thousands of students achieved their <span className="text-[#0b7b6e]">dream job at</span>
+            Future-skill development aligned with <span className="text-[#0b7b6e]">global market demand</span>
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-12 gap-y-16 items-center justify-items-center px-4">
@@ -346,25 +346,25 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-4">
                <div className="inline-block bg-white border border-gray-100 rounded-xl px-5 py-2.5 text-sm text-gray-600 shadow-sm font-medium">
-                 Training
+                 Innovation
                </div>
                <h2 className="text-4xl font-bold text-[#ff5722]">
-                 Staff training
+                 AI & Future Skills
                </h2>
             </div>
             
             <div className="space-y-6">
               {[
                 {
-                  text: "Teachers don't get lost in the grid view and have a dedicated Podium space.",
+                  text: "AI-driven training programs and digital transformation consultancy.",
                   icon: (
                     <svg className="w-6 h-6 text-[#0b7b6e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   )
                 },
                 {
-                  text: "TA's and presenters can be moved to the front of the class.",
+                  text: "Automation tools and business solutions for modern enterprises.",
                   icon: (
                     <svg className="w-6 h-6 text-[#0b7b6e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -372,10 +372,10 @@ export default function Home() {
                   )
                 },
                 {
-                  text: "Teachers can easily see all students and class data at one time.",
+                  text: "Future-skill development aligned with global market demand.",
                   icon: (
                     <svg className="w-6 h-6 text-[#0b7b6e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   )
                 }
